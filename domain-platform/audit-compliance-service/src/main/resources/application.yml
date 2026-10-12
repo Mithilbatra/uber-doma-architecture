@@ -16,6 +16,12 @@ spring:
     username: uber
     password: uber_password
 
+# Each scatter-gather leg is bounded independently so one unavailable domain
+# cannot hold the complete regulatory audit query open indefinitely.
+audit:
+  scatter-gather:
+    downstream-timeout: 2s
+
 # Micrometer Tracing + OpenTelemetry W3C context propagation configuration.
 # See https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.micrometer-tracing
 management:
