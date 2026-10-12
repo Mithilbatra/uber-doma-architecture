@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>vehicle-registry-service</artifactId>
-    <name>Uber DOMA - Vehicle Registry & Class Mapping</name>
+    <name>Uber DOMA - Vehicle Registry &amp; Class Mapping</name>
 
     <dependencies>
         <dependency>

@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>fraud-gps-spoofing-service</artifactId>
-    <name>Uber DOMA - Anti-Fraud & GPS Spoofing Detection</name>
+    <name>Uber DOMA - Anti-Fraud &amp; GPS Spoofing Detection</name>
 
     <dependencies>
         <dependency>

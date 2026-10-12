@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>in-trip-chat-service</artifactId>
-    <name>Uber DOMA - Masked Chat & VoIP Call</name>
+    <name>Uber DOMA - Masked Chat &amp; VoIP Call</name>
 
     <dependencies>
         <dependency>

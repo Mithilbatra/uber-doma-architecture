@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>rider-profile-service</artifactId>
-    <name>Uber DOMA - Rider Profile & Preferences</name>
+    <name>Uber DOMA - Rider Profile &amp; Preferences</name>
 
     <dependencies>
         <dependency>

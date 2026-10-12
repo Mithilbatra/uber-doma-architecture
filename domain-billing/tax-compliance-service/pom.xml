@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>tax-compliance-service</artifactId>
-    <name>Uber DOMA - Rideshare Tax & Surcharges</name>
+    <name>Uber DOMA - Rideshare Tax &amp; Surcharges</name>
 
     <dependencies>
         <dependency>

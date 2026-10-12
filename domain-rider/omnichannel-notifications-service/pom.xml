@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>omnichannel-notifications-service</artifactId>
-    <name>Uber DOMA - Push, SMS & Alert Notifications</name>
+    <name>Uber DOMA - Push, SMS &amp; Alert Notifications</name>
 
     <dependencies>
         <dependency>

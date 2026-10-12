@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>demand-pin-service</artifactId>
-    <name>Uber DOMA - Rider Demand & Pin Drop Intake</name>
+    <name>Uber DOMA - Rider Demand &amp; Pin Drop Intake</name>
 
     <dependencies>
         <dependency>

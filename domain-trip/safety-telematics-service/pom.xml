@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>safety-telematics-service</artifactId>
-    <name>Uber DOMA - Sensor Crash Detection & RideCheck</name>
+    <name>Uber DOMA - Sensor Crash Detection &amp; RideCheck</name>
 
     <dependencies>
         <dependency>

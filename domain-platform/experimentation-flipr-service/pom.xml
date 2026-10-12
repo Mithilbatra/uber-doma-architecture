@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>experimentation-flipr-service</artifactId>
-    <name>Uber DOMA - Dynamic Feature Flags & A/B XP</name>
+    <name>Uber DOMA - Dynamic Feature Flags &amp; A/B XP</name>
 
     <dependencies>
         <dependency>

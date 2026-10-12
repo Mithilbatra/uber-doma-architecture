@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>trip-cancellation-service</artifactId>
-    <name>Uber DOMA - Trip Cancellation & Refund Logic</name>
+    <name>Uber DOMA - Trip Cancellation &amp; Refund Logic</name>
 
     <dependencies>
         <dependency>

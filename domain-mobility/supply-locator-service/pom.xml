@@ -9,7 +9,7 @@
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <artifactId>supply-locator-service</artifactId>
-    <name>Uber DOMA - Driver Supply & Geolocation</name>
+    <name>Uber DOMA - Driver Supply &amp; Geolocation</name>
 
     <dependencies>
         <dependency>
