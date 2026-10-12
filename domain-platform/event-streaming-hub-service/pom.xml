@@ -45,5 +45,24 @@
             <artifactId>common-redis</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <!-- Uber H3 hexagonal spatial index. Provides O(1) lat/lng → cell
+             conversion and constant-time kRing neighbor lookups used to
+             tag CDC events from the Kafka Real-Time CDC Message Bus with
+             the H3 cell they originated in, so downstream consumers can
+             perform geo-clustered event routing without re-querying
+             lat/lng on every read. Resolution 8 (city-block scale,
+             ~0.74 km²) and resolution 9 (building scale, ~0.10 km²)
+             are the production defaults called out in the architectural
+             context; the int overloads support the full 0-15 range.
+             Version is inherited from uber-doma-parent dependencyManagement. -->
+        <dependency>
+            <groupId>com.uber</groupId>
+            <artifactId>h3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 </project>
