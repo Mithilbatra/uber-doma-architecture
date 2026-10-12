@@ -1,4 +1,4 @@
-package com.uber.doma.domain_platform.audit_compliance_service.routing;
+[Staff Architect] Implement Contraction Hierarchy Bidirectional Search in audit-compliance-service #875package com.uber.doma.domain_platform.audit_compliance_service.routing;
 
 import java.util.Objects;
 
