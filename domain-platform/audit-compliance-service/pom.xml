@@ -65,6 +65,31 @@
             <groupId>com.uber</groupId>
             <artifactId>h3</artifactId>
         </dependency>
+        <!-- Resilience4j circuit breaker: protects downstream audit-storage
+             and regulatory-reporting dependencies from cascading failures.
+             The breaker opens when the failure rate exceeds the configured
+             threshold over a sliding window (configured in application.yml
+             under resilience4j.circuitbreaker.instances). -->
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-spring-boot3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-circuitbreaker</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-bulkhead</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>io.github.resilience4j</groupId>
+            <artifactId>resilience4j-micrometer</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

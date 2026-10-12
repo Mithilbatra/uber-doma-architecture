@@ -41,3 +41,50 @@ otel:
     exporter: none
   service:
     name: audit-compliance-service
+
+# Resilience4j: sliding-window circuit breaker that opens when the
+# failure rate exceeds 50% over a 100-call window. The breaker protects
+# downstream regulatory-reporting and audit-storage calls from cascading
+# failures; the fallback methods return empty/degraded responses so the
+# booking SLA is preserved even when the breaker is OPEN.
+resilience4j:
+  circuitbreaker:
+    instances:
+      auditStorage:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 100
+        minimumNumberOfCalls: 20
+        failureRateThreshold: 50
+        slowCallRateThreshold: 50
+        slowCallDurationThreshold: 2s
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 5
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        recordExceptions:
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
+          - com.uber.doma.domain_platform.audit_compliance_service.resilience.DownstreamUnavailableException
+      regulatoryReport:
+        registerHealthIndicator: true
+        slidingWindowType: COUNT_BASED
+        slidingWindowSize: 100
+        minimumNumberOfCalls: 20
+        failureRateThreshold: 50
+        waitDurationInOpenState: 15s
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        recordExceptions:
+          - java.io.IOException
+          - java.util.concurrent.TimeoutException
+          - com.uber.doma.domain_platform.audit_compliance_service.resilience.DownstreamUnavailableException
+  bulkhead:
+    instances:
+      auditStorage:
+        maxConcurrentCalls: 50
+        maxWaitDuration: 100ms
+  timelimiter:
+    instances:
+      auditStorage:
+        timeoutDuration: 3s
+        cancelRunningFuture: true

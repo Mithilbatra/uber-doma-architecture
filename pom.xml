@@ -25,6 +25,7 @@
         <grpc-spring-boot-starter.version>3.1.0.RELEASE</grpc-spring-boot-starter.version>
         <uber-h3.version>3.7.2</uber-h3.version>
         <testcontainers.version>1.19.8</testcontainers.version>
+        <resilience4j.version>2.2.0</resilience4j.version>
     </properties>
 
     <modules>
@@ -57,6 +58,30 @@
                 <groupId>com.uber</groupId>
                 <artifactId>h3</artifactId>
                 <version>${uber-h3.version}</version>
+            </dependency>
+            <!-- Resilience4j circuit breaker family. Centralised here so
+                 every microservice picks up the same version and the
+                 @CircuitBreaker / @Bulkhead annotations behave identically
+                 across the fleet. -->
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-spring-boot3</artifactId>
+                <version>${resilience4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-circuitbreaker</artifactId>
+                <version>${resilience4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-bulkhead</artifactId>
+                <version>${resilience4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.resilience4j</groupId>
+                <artifactId>resilience4j-micrometer</artifactId>
+                <version>${resilience4j.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
