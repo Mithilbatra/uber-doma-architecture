@@ -99,6 +99,18 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!-- ArchUnit: compile-time enforcement of DOMA bounded-context isolation.
+             Verifies that the audit-compliance-service never directly depends on
+             classes belonging to other leaf domains (mobility, trip, billing,
+             driver, rider). Cross-domain communication must go through the
+             shared "common" infrastructure or the edge-gateway, never via
+             direct package imports. -->
+        <dependency>
+            <groupId>com.tngtech.archunit</groupId>
+            <artifactId>archunit-junit5</artifactId>
+            <version>1.3.0</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
