@@ -25,6 +25,15 @@ audit:
 # Micrometer Tracing + OpenTelemetry W3C context propagation configuration.
 # See https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html#actuator.micrometer-tracing
 management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info
+  endpoint:
+    health:
+      show-details: always
+      probes:
+        enabled: true
   tracing:
     enabled: true
     sampling:
